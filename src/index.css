@@ -5,9 +5,155 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(farthest-side,#0000 40%,#474bff 41%);
+  background: linear-gradient(0deg ,rgba(71,75,255,0.5) 50%,rgba(71,75,255,1) 0) center/4.5px 100%,
+       linear-gradient(90deg,rgba(71,75,255,0.25) 50%,rgba(71,75,255,0.75) 0) center/100% 4.5px;
+  background-repeat: no-repeat;
+  animation: spinner-d3o0rx 1s infinite steps(12);
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+
+.spinner::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+
+@keyframes spinner-d3o0rx {
+  100% {
+     transform: rotate(1turn);
+  }
+}
+
+.App{
+  /* width:75%; */
+  margin: 0 auto;
+  min-height: 100vh;
+  
+}
+
+
+.header{
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
+    text-transform:uppercase;
+    font-size: 2rem;
+    box-shadow: 1px 1px 10px #0d0d0f;
+    padding: 0.5rem 0;
+    /* margin-top: 1rem; */
+
+}
+
+.blog-container{
+  height:100%; 
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  
+}
+.blog-content{
+  height: 100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.load{
+  height: 100vh;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+
+.card{
+  width: 60%;
+  text-align: left;
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
+ 
+}
+
+.title{
+  font-size:large;
+  font-weight: bolder;
+}
+
+.tag{
+  display: flex;
+  color: rgb(101, 101, 204);
+  gap: 1rem;
+}
+
+.pagination{
+  box-shadow: 1px 1px 10px #0d0d0f;
+  background-color: white;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin:0 auto;
+
+}
+
+.page-header{
+ display: flex;
+ align-items: center;
+ gap: 15rem;
+
+ height: 4rem;
+ width: 60%;
+ margin: 0 auto;
+
+ 
+}
+.page-heading{
+  font-size: x-large;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.btn{
+  width: max-content;
+  height: fit-content;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  margin-right:1rem ;
+  box-shadow: 1px 1px 10px;
+  border: none;
+}
+
+
